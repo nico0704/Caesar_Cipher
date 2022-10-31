@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Rufina:wght@400;700&family=Sintony:wght@400;700&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root {
+  --primary: #1F2833;
+  --secondary: #0B0C10;
+  --buttom_color: #45A29E;
+  --border_color: #45A29E;
+  --font_h1: #66FCF1;
+  --font_body: #C5C6C7;
+  --alert: #dd777786;
+}
+
+body {
+  color: var(--font_body);
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  background-color: var(--primary);
+}
+
+h1 {
+  color: var(--font_h1);
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 5px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 70px;
+  letter-spacing: 1pt;
+  margin-bottom: 2%;
+}
+
+#encoded_text,
+#key,
+button,
+#ciphertext {
+  color:var(--font);
+  background-color: var(--primary);
+  font-family: 'Roboto', sans-serif;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: var(--border_color);
+}
+
+#ciphertext:hover {
+  border-width: 2px;
+  border-color: var(--buttom_color);
+  background-color: #2a3645;
+}
+
+#encoded_text:hover {
+  border-width: 2px;
+  border-color: var(--buttom_color);
+}
+
+#key:hover {
+  border-width: 2px;
+  border-color: var(--border_color);
+  background-color: #2a3645;
+}
+
+button {
+  padding: 20px;
+  background-color: var(--primary);
+  border-color: var(--font_h1);
+  margin-bottom: 3%;
+  margin-left: 25%;
+  box-sizing:border-box;
+  width: 50%;
+  border-radius: 0%;
+  font-weight:bold;
+  font-size: 15px;
+  letter-spacing: 3pt;
+  border-width: 1px;
+  transition: all 0.2s;
+}
+
+#decode_with_key {
+  margin-top: 10%;
+}
+
+
+button:hover {
+  background-color: var(--secondary);
+  border-color: var(--font_body);
+}
+
+#key {
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-weight:lighter;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  border-width: 1px;
+}
+
+.msg {
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-weight:lighter;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  border-width: 1px;
+  margin-top: 10%;
+}
+
+.wrapper {
+  margin-top: 7%;
+  margin-left: 2%;
+  margin-right: 2%;
+  float:left;
+}
+
+.body_wrapper{
+  margin-left: 3%;
+}
+
+#encoded_text {
+  float:left;
+  width: 34%;
+  height: 500px;
+  padding: 20px 20px;
+  margin-top: 1%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+  font-weight:lighter;
+  font-size: 25px;
+  resize: none;
+  }
+
+#ciphertext {
+  float:left;
+  width: 34%;
+  height: 500px;
+  padding: 20px 20px;
+  margin-top: 1%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+  font-weight:lighter;
+  font-size: 25px;
+  resize: none;
+}

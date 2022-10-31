@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Caesars Cipher</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="caesar_cipher.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header" id="top">
+            <h1>CAESAR CIPHER</h1>
+        </div>
+    </header>
+    <div class="body_wrapper">
+        <textarea id="ciphertext">your ciphertext...</textarea>
+        <div class="wrapper">
+            <div class="decode">
+                <button id="decode_without_key" onclick="decode_without_key();">DECODE</button>
+                <button id="decode_with_key" onclick="decode_with_key();">DECODE WITH KEY</button>
+            </div>
+            <input type="text" id="key" onfocus="this.value=''" value="ENTER YOUR KEY HERE">
+            <div class="msg" id="msg"></div>
+        </div>
+        <textarea id="encoded_text" readonly></textarea>
+    </div>
+</body>
+
+</html>
