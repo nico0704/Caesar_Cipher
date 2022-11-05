@@ -6,10 +6,8 @@ var counter = 0;
 
 function decode_without_key() {
     document.getElementById("ciphertext").style.borderColor = "var(--border_color)";
-    let max = 0;
-    let shifted_e_index;
-    let shift = 0;
-    let occurences;
+    var max = 0;
+    var shifted_e_index;
     console.log("Decoding...");
     var decoded_text = document.getElementById("ciphertext").value.toLowerCase().replaceAll("<lb>", "");
     if (decoded_text == "" || decoded_text == "your ciphertext...") {
@@ -17,7 +15,7 @@ function decode_without_key() {
         return;
     }
     // get occurences of every character in decoded text
-    occurences = Array(255).fill(0);
+    let occurences = Array(255).fill(0);
     for (let i = 0; i < decoded_text.length; i++) {
         occurences[decoded_text.charCodeAt(i)]++;
     }
@@ -28,26 +26,12 @@ function decode_without_key() {
             shifted_e_index = i;
         }
     }
-    console.log(
-        "Most common character: " +
-            shifted_e_index +
-            " -> " +
-            String.fromCharCode(shifted_e_index) +
-            " [" +
-            occurences[shifted_e_index] +
-            " occurences]"
-    );
     // calculate the shift of e
-    shift = shifted_e_index - ascii_value_e;
+    var shift = shifted_e_index - ascii_value_e;
     // negative shift means that the most common character is a,b,c or d -> convert shift
-    if (shift < 0) {
-        shift = num_letters_in_alphabet - Math.abs(shift);
-    }
-    if (max == 1) {
-        shift = 0;
-    }
+    if (shift < 0) shift = num_letters_in_alphabet - Math.abs(shift);
+    if (max == 1) shift = 0;
     document.getElementById("msg").innerHTML = "Identified shift: " + shift + " [a -> " + String.fromCharCode(ascii_value_a + shift) + "]";
-    console.log("Decrypting...");
     document.getElementById("encoded_text").innerHTML = decrypt(decoded_text, shift);
     console.log("Decryption terminates");
     console.log("Decryption was applied to " + counter + " characters");
@@ -77,7 +61,6 @@ function decode_with_key() {
         key_error("Must be a number between 0 and 26");
         return;
     }
-    console.log("Decrypting...");
     // Decrypt the text with given key
     document.getElementById("encoded_text").innerHTML = decrypt(decoded_text, shift);
     console.log("Decryption terminates");
@@ -92,7 +75,7 @@ function decrypt(decoded_text, shift) {
         if (c >= ascii_value_a && c <= ascii_value_z) {
             counter++;
             // current character is a letter with ascii value between 97 and 122
-            // decryption has to be applied
+            // -> decryption has to be applied
             if (c - shift >= ascii_value_a) {
                 encoded_string_return += String.fromCharCode(c - shift);
             } else {
@@ -102,7 +85,7 @@ function decrypt(decoded_text, shift) {
             }
         } else {
             // current character is a special character with ascii value that is not in between 97 - 122
-            // therefore no decryption is needed
+            // -> no decryption is needed
             encoded_string_return += String.fromCharCode(c);
         }
     }
