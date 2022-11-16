@@ -31,7 +31,7 @@ function decode_without_key() {
     // negative shift means that the most common character is a,b,c or d -> convert shift
     if (shift < 0) shift = num_letters_in_alphabet - Math.abs(shift);
     if (max == 1) shift = 0;
-    document.getElementById("msg").innerHTML = "Identified shift: " + shift + " [a -> " + String.fromCharCode(ascii_value_a + shift) + "]";
+    document.getElementById("msg").innerHTML = "Identified shift: " + shift + " [a was decrypted with " + String.fromCharCode(ascii_value_a + shift) + "]";
     document.getElementById("encoded_text").innerHTML = decrypt(decoded_text, shift);
     console.log("Decryption terminates");
     console.log("Decryption was applied to " + counter + " characters");
